@@ -16,6 +16,14 @@
     --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
 }
+
+/* Ensure light mode by default */
+:root[data-theme="light"] {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --text-color: #333;
+    --background-color: #fff;
+}
 :root .fa-sun { display: none; }
 :root .fa-moon { padding-left: 10px; padding-top: 12px; display: block; }
 
@@ -30,7 +38,6 @@ body {
     padding-bottom: 70px;
     font-family: 'Roboto', sans-serif;
     color: var(--text-color);
-    background-color: var(--background-color);
     line-height: 1.6;
 }
 
@@ -91,7 +98,7 @@ a:hover:after, table.table a:hover:after { width: 100%; }
     position: relative;
 }
 
-.navbar { box-shadow: none; border-bottom: 1px solid #e8e8e8; opacity: 0.95; background-color: var(--global-bg-color); background-color: var(--background-color); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 1rem 0; }
+.navbar { box-shadow: none; border-bottom: 1px solid #e8e8e8; opacity: 0.95; background-color: var(--background-color); box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); padding: 1rem 0; }
 
 .navbar.navbar-light a:hover { text-decoration: none; }
 .navbar.navbar-light .navbar-brand { color: var(--global-text-color); }
@@ -404,20 +411,21 @@ footer a {
   }
 }
 
-/* Dark Mode Support */
+/* Dark Mode Support - Only apply if user explicitly has dark mode enabled */
 @media (prefers-color-scheme: dark) {
-  :root {
+  /* Only apply dark mode if the user hasn't manually set a theme preference */
+  :root:not([data-theme]) {
     --primary-color: #ecf0f1;
     --secondary-color: #3498db;
     --text-color: #ecf0f1;
     --background-color: #2c3e50;
   }
   
-  .post {
+  :root:not([data-theme]) .post {
     background-color: #34495e;
   }
   
-  .navbar {
+  :root:not([data-theme]) .navbar {
     background-color: #2c3e50;
   }
 }
