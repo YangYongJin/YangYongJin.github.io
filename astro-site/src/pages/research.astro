@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import RouteTopo from '../components/RouteTopo.astro';
+import { profile, projects } from '../data/profile.js';
+---
+<Base title="Research · Yongjin Yang">
+  <h1 style="margin-top:2.5rem">Research</h1>
+  <p style="color:var(--muted);margin-top:1rem">
+    I am interested in AI systems that can keep improving after their initial training:
+    systems that accumulate experience, decide when to look something up and when to
+    internalize it, and explore productively when existing strategies fall short. The
+    themes below are some of my current interests rather than a fixed research agenda.
+  </p>
+  <div class="simple-list" style="margin-top:1rem">
+    {projects.map((pr) => (
+      <article class="simple-entry">
+        <h3>{pr.name}</h3>
+        <p>{pr.desc}</p>
+      </article>
+    ))}
+  </div>
+  <div style="max-width:380px;margin:2.5rem auto 0">
+    <RouteTopo />
+  </div>
+  <p style="color:var(--muted);margin-top:1.5rem">
+    Working on something in this space? I am always open to collaborations, so
+    <a href={'mailto:' + profile.email}>get in touch</a>.
+  </p>
+</Base>

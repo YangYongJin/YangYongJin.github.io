@@ -1,0 +1,19 @@
+---
+import Base from './Base.astro';
+const { frontmatter } = Astro.props;
+---
+<Base title={frontmatter.title + ' · Yongjin Yang'} description={frontmatter.description}>
+  <article class="prose">
+    <p class="section-note" style="margin-top:2rem">
+      <a href="/blog/">← all posts</a> · {frontmatter.date}
+      {frontmatter.tags && frontmatter.tags.map((t) => <span class="pill outline" style="margin-left:6px">{t}</span>)}
+    </p>
+    <h1>{frontmatter.title}</h1>
+    <slot />
+    <hr style="border:none;border-top:1px solid var(--border);margin:2.5rem 0 1rem" />
+    <p class="section-note">
+      I work on post-training and self-improvement for language models at UofT / Vector.
+      Thoughts or disagreements? <a href="mailto:dyyjkd@gmail.com">Let me know</a>.
+    </p>
+  </article>
+</Base>

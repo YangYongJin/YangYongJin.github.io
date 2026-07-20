@@ -1,0 +1,92 @@
+---
+import Base from '../layouts/Base.astro';
+import RouteTopo from '../components/RouteTopo.astro';
+import { profile, news, projects, upcomingPosts } from '../data/profile.js';
+import { publications } from '../data/publications.js';
+const selected = publications.filter((p) => p.selected).slice(0, 5);
+---
+<Base>
+  <section class="hero">
+    <div>
+      <p class="lede" set:html={profile.bioHtml} />
+      <p class="name-note">My given name is 용진 (Yong-jin) in Korean.</p>
+      <nav class="profile-links" aria-label="Profile links">
+        <a href="/research/">Research</a>
+        <a href="/publications/">Publications</a>
+        <a href={profile.links.scholar}>Scholar</a>
+        <a href={'mailto:' + profile.email}>Email</a>
+      </nav>
+    </div>
+    <div style="text-align:center">
+      <img class="avatar" src="/img/yongjin_profile.png" alt="Yongjin Yang" style="margin-bottom:1rem" />
+      <RouteTopo />
+    </div>
+  </section>
+
+  <h2>Research overview</h2>
+  <p style="color:var(--muted);margin:0.6rem 0 0">
+    My research asks how language models learn across the <strong>entire learning
+    pipeline</strong>: what experiences they should learn from; where information should
+    move among context, external memory, and model parameters; how they should explore;
+    and how they can seek and use feedback. I am also interested in proactiveness and
+    curiosity—how a system can recognize what it does not know and decide what to learn
+    next. Rather than treating these as separate stages, I study how their interactions
+    can help models continue improving after initial training.
+  </p>
+
+  <h2>News</h2>
+  <ul style="list-style:none;padding:0;margin:0.8rem 0">
+    {news.map((n) => (
+      <li style="padding:0.35rem 0;color:var(--muted)">
+        <span style="color:var(--faint);font-size:0.85rem;margin-right:0.7rem">{n.date}</span>{n.text}
+      </li>
+    ))}
+  </ul>
+
+  <h2>Selected publications <span class="section-note" style="font-weight:400">· <a href="/publications/">full list →</a></span></h2>
+  <div style="margin-top:0.4rem">
+    {selected.map((p) => (
+      <div class="pub">
+        <p class="title">{p.title} {p.flash && <span class="pill amber">⚡</span>}</p>
+        <p class="venue">{p.venue}</p>
+        {Object.keys(p.links || {}).length > 0 && (
+          <div class="pubLinks">
+            {Object.entries(p.links).map(([k, v]) => <a href={v}>[{k}]</a>)}
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+
+  <h2>Current interests</h2>
+  <div class="simple-list">
+    {projects.map((pr) => (
+      <article class="simple-entry">
+        <h3>{pr.name}</h3>
+        <p>{pr.desc}</p>
+      </article>
+    ))}
+  </div>
+
+  <h2>Blog</h2>
+  <p style="color:var(--muted);margin:0.6rem 0 0.8rem">
+    Notes in preparation:
+  </p>
+  <div class="simple-list blog-list">
+    {upcomingPosts.map((p) => (
+      <article class="simple-entry">
+        <h3>{p.title}</h3>
+        <p>{p.desc}</p>
+      </article>
+    ))}
+  </div>
+
+  <h2>Get in touch</h2>
+  <p style="color:var(--muted);margin:0.6rem 0 0">
+    I am always happy to connect and very open to collaborations on post-training,
+    exploration, memory, agents, or anything adjacent. Reach out at
+    <a href={'mailto:' + profile.email}>{profile.email}</a>, or find me on
+    <a href={profile.links.linkedin}>LinkedIn</a> and
+    <a href={profile.links.scholar}>Google Scholar</a>.
+  </p>
+</Base>

@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+import { publications } from '../data/publications.js';
+const bold = (authors) =>
+  authors.replace(/Yongjin Yang(\*?)/g, '<span class="me">Yongjin Yang$1</span>');
+const groups = [
+  {
+    label: 'Selected publications',
+    note: 'LLM post-training & self-improvement',
+    items: publications.filter((p) => p.key),
+  },
+  {
+    label: 'Additional publications',
+    note: null,
+    items: publications.filter((p) => !p.key),
+  },
+];
+---
+<Base title="Publications · Yongjin Yang">
+  <h1 style="margin-top:2.5rem">Publications</h1>
+  <p class="section-note">⚡ = oral / spotlight / award · * equal contribution · † corresponding author</p>
+  {groups.map((g) => (
+    <section>
+      <h2>{g.label} {g.note && <span class="section-note" style="font-weight:400">· {g.note}</span>}</h2>
+      {g.items.map((p) => (
+        <div class="pub">
+          <p class="title">{p.title} {p.flash && <span class="pill amber">⚡</span>}</p>
+          <p class="authors" set:html={bold(p.authors)} />
+          <p class="venue">{p.venue}</p>
+          {Object.keys(p.links || {}).length > 0 && (
+            <div class="pubLinks">
+              {Object.entries(p.links).map(([k, v]) => <a href={v}>[{k}]</a>)}
+            </div>
+          )}
+        </div>
+      ))}
+    </section>
+  ))}
+</Base>

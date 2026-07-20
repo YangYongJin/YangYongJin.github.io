@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import { profile, upcomingPosts } from '../../data/profile.js';
+const posts = Object.values(import.meta.glob('./*.md', { eager: true }))
+  .sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+---
+<Base title="Blog · Yongjin Yang">
+  <h1 style="margin-top:2.5rem">Blog</h1>
+  <p class="section-note">Notes on post-training, self-improvement, and agents.</p>
+
+  {posts.length > 0 && (
+    <div class="post-list">
+      {posts.map((p) => (
+        <div class="post-item">
+          <h3><a href={p.url}>{p.frontmatter.title}</a></h3>
+          <p class="meta">{p.frontmatter.date}
+            {p.frontmatter.tags && p.frontmatter.tags.slice(0, 4).map((t) => <span class="pill outline" style="margin-left:6px">{t}</span>)}
+          </p>
+          <p>{p.frontmatter.description}</p>
+        </div>
+      ))}
+    </div>
+  )}
+
+  <h2>In preparation</h2>
+  <p style="color:var(--muted)">
+    Notes I am currently preparing:
+  </p>
+  <div class="simple-list blog-list" style="margin-top:1rem">
+    {upcomingPosts.map((p) => (
+      <article class="simple-entry">
+        <h3>{p.title}</h3>
+        <p>{p.desc}</p>
+      </article>
+    ))}
+  </div>
+  <p style="color:var(--muted);margin-top:1.5rem">
+    Want a note when the first one lands, or want to discuss any of these topics before I
+    write them? <a href={'mailto:' + profile.email}>Email me</a>; I'd genuinely enjoy that.
+  </p>
+</Base>
