@@ -26,7 +26,7 @@ const active = (p) => (p === '/' ? path === '/' : path.startsWith(p)) ? 'active'
           <a href="/research/" class={active('/research')}>Research</a>
           <a href="/publications/" class={active('/publications')}>Publications</a>
           <a href="/blog/" class={active('/blog')}>Blog</a>
-          <a href="/cv/" class={active('/cv')}>CV</a>
+          <a href={profile.links.cv}>CV</a>
           <button id="theme-toggle" aria-label="Toggle dark mode">◐</button>
         </div>
       </nav>

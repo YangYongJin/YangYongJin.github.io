@@ -14,6 +14,7 @@ export const profile = {
     github: "https://github.com/YangYongJin",
     scholar: "https://scholar.google.com/citations?user=qGVZm3sAAAAJ",
     linkedin: "https://www.linkedin.com/in/yongjin-yang-0195a6184/",
+    cv: "https://drive.google.com/file/d/1r37bpjVRWvK_cWFh0txtSKrlxopp-y5B/view?usp=drive_link",
   },
   bioHtml: `
     I am a Ph.D. student at the University of Toronto and the Vector Institute, advised by
