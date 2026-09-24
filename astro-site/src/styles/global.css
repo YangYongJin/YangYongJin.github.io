@@ -99,6 +99,47 @@ nav.topnav .links a .sub { color: var(--faint); font-size: 0.8rem; }
 .pub .venue { font-size: 0.88rem; color: var(--faint); }
 .pub .pubLinks { margin-top: 0.3rem; font-size: 0.88rem; display: flex; gap: 0.8rem; flex-wrap: wrap; }
 
+.publication-section { margin-top: 2.6rem; }
+.publication-section h2 { margin-bottom: 0.9rem; }
+.publication-section h2::after { width: 100%; height: 1px; margin-top: 4px; background: var(--text); }
+.citation {
+  display: grid;
+  grid-template-columns: 3.2rem minmax(0, 1fr);
+  gap: 0.55rem;
+  padding: 0.62rem 0;
+}
+.citation-index {
+  color: var(--faint);
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+.citation-title {
+  margin: 0 0 0.08rem;
+  font-family: var(--serif);
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.006em;
+}
+.citation-title a { color: var(--accent); }
+.citation-authors {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+.citation-authors .me { color: var(--text); font-weight: 700; }
+.citation-meta {
+  margin: 0.05rem 0 0;
+  font-family: var(--serif);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+.citation-venue { color: var(--text); font-style: italic; font-weight: 600; }
+.citation-links { display: inline-flex; gap: 0.35rem; margin-left: 0.45rem; font-family: inherit; }
+
 .post-list .post-item { padding: 1.2rem 0; border-bottom: 1px dotted var(--border); }
 .post-item h3 { margin: 0 0 0.25rem; }
 .post-item h3 a { color: var(--text); }
@@ -129,3 +170,8 @@ footer.site {
   border: 0;
 }
 .section-note { color: var(--faint); font-size: 0.85rem; font-style: italic; }
+
+@media (max-width: 560px) {
+  .citation { grid-template-columns: 2.55rem minmax(0, 1fr); gap: 0.25rem; }
+  .citation-links { display: flex; margin: 0.18rem 0 0; }
+}

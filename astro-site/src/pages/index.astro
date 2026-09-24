@@ -47,7 +47,7 @@ const selected = publications.filter((p) => p.selected).slice(0, 5);
   <div style="margin-top:0.4rem">
     {selected.map((p) => (
       <div class="pub">
-        <p class="title">{p.title} {p.flash && <span class="pill amber">⚡</span>}</p>
+        <p class="title">{p.title}</p>
         <p class="venue">{p.venue}</p>
         {Object.keys(p.links || {}).length > 0 && (
           <div class="pubLinks">

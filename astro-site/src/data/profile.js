@@ -5,11 +5,11 @@
 
 export const profile = {
   name: "Yongjin Yang",
-  tagline: "LLM post-training and self-improving agents",
+  tagline: "RL post-training for LLMs and self-improving agents",
   affiliation: "University of Toronto · Vector Institute",
   email: "yjyang@cs.toronto.edu",
   interests:
-    "LLM post-training and self-improving agents, with a focus on RL post-training (curricula, exploration, and multi-domain RLVR), knowledge distillation, prompt optimization, and memory-augmented agents.",
+    "RL post-training for LLMs and self-improving agents, focusing on curricula and exploration in multi-domain RLVR, knowledge distillation, prompt optimization, and memory-augmented agents.",
   links: {
     github: "https://github.com/YangYongJin",
     scholar: "https://scholar.google.com/citations?user=qGVZm3sAAAAJ",
@@ -22,9 +22,9 @@ export const profile = {
     Connaught International Scholarship. Previously, I completed my M.S. at KAIST AI with
     <a href="https://fbsqkd.github.io/">Se-Young Yun</a> and
     <a href="https://sites.google.com/view/kiminlee">Kimin Lee</a>, and my B.S. at Seoul
-    National University. I study LLM post-training and self-improving agents, including
-    RL curricula and exploration, knowledge distillation, prompt optimization, and
-    memory-augmented agents.
+    National University. I study RL post-training for LLMs and self-improving agents,
+    focusing on curricula and exploration in multi-domain RLVR, knowledge distillation,
+    prompt optimization, and memory-augmented agents.
   `,
 };
 
@@ -73,6 +73,7 @@ export const experience = [
 
 export const awards = [
   { when: "2025", what: "Connaught International Scholarship · University of Toronto" },
+  { when: "2026", what: "ICML Gold Reviewer" },
   { when: "2017 – 2023", what: "Korea National Science & Technology Scholarship · full-ride academic excellence scholarship" },
 ];
 
@@ -82,7 +83,7 @@ export const services = [
 ];
 
 export const teaching = [
-  { when: "Sep 2026 – Dec 2026", what: "Probabilistic Learning and Reasoning (CSC412/2506) · Teaching Assistant (UofT)" },
+  { when: "Sep 2026 – Dec 2026", what: "Probabilistic Learning and Reasoning (CSC412) · Teaching Assistant (UofT)" },
   { when: "Sep 2025 – Dec 2025", what: "Introduction to Programming Languages · Teaching Assistant (UofT)" },
   { when: "Sep 2021 – Feb 2022", what: "Introduction to Algorithms · Departmental Tutor (SNU)" },
   { when: "Mar 2018 – Aug 2018", what: "Principles of Physics I · Group Tutor (SNU)" },

@@ -5,34 +5,41 @@ const bold = (authors) =>
   authors.replace(/Yongjin Yang(\*?)/g, '<span class="me">Yongjin Yang$1</span>');
 const groups = [
   {
-    label: 'Selected publications',
-    note: 'LLM post-training & self-improvement',
-    items: publications.filter((p) => p.key),
+    label: 'Conference papers',
+    prefix: 'C',
+    items: publications.filter((p) => p.category === 'conference'),
   },
   {
-    label: 'Additional publications',
-    note: null,
-    items: publications.filter((p) => !p.key),
+    label: 'Preprints',
+    prefix: 'P',
+    items: publications.filter((p) => p.category === 'preprint'),
   },
 ];
 ---
 <Base title="Publications · Yongjin Yang">
   <h1 style="margin-top:2.5rem">Publications</h1>
-  <p class="section-note">⚡ = oral / spotlight / award · * equal contribution · † corresponding author</p>
+  <p class="section-note">* equal contribution · † corresponding author</p>
   {groups.map((g) => (
-    <section>
-      <h2>{g.label} {g.note && <span class="section-note" style="font-weight:400">· {g.note}</span>}</h2>
-      {g.items.map((p) => (
-        <div class="pub">
-          <p class="title">{p.title} {p.flash && <span class="pill amber">⚡</span>}</p>
-          <p class="authors" set:html={bold(p.authors)} />
-          <p class="venue">{p.venue}</p>
-          {Object.keys(p.links || {}).length > 0 && (
-            <div class="pubLinks">
-              {Object.entries(p.links).map(([k, v]) => <a href={v}>[{k}]</a>)}
-            </div>
-          )}
-        </div>
+    <section class="publication-section">
+      <h2>{g.label}</h2>
+      {g.items.map((p, index) => (
+        <article class="citation">
+          <div class="citation-index">[{g.prefix}{g.items.length - index}]</div>
+          <div>
+            <h3 class="citation-title">
+              {p.links?.paper ? <a href={p.links.paper}>{p.title}</a> : p.title}
+            </h3>
+            <p class="citation-authors" set:html={bold(p.authors)} />
+            <p class="citation-meta">
+              <span class="citation-venue">{p.venue}</span>
+              {Object.keys(p.links || {}).length > 0 && (
+                <span class="citation-links">
+                  {Object.entries(p.links).map(([k, v]) => <a href={v}>[{k}]</a>)}
+                </span>
+              )}
+            </p>
+          </div>
+        </article>
       ))}
     </section>
   ))}
