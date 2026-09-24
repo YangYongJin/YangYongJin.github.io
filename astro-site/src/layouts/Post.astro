@@ -1,5 +1,6 @@
 ---
 import Base from './Base.astro';
+import { profile } from '../data/profile.js';
 const { frontmatter } = Astro.props;
 ---
 <Base title={frontmatter.title + ' · Yongjin Yang'} description={frontmatter.description}>
@@ -13,7 +14,7 @@ const { frontmatter } = Astro.props;
     <hr style="border:none;border-top:1px solid var(--border);margin:2.5rem 0 1rem" />
     <p class="section-note">
       I work on post-training and self-improvement for language models at UofT / Vector.
-      Thoughts or disagreements? <a href="mailto:dyyjkd@gmail.com">Let me know</a>.
+      Thoughts or disagreements? <a href={'mailto:' + profile.email}>Let me know</a>.
     </p>
   </article>
 </Base>

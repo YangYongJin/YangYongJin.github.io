@@ -13,8 +13,22 @@ export const publications = [
     year: 2026, key: true, firstAuthor: true, flash: true, selected: true,
     title: "Transferability for General Reasoning: An Automated Curriculum for Multi-Domain RLVR",
     authors: "Yongjin Yang, Jiarui Liu, Yinghui He, Lechen Zhang, Bernhard Schölkopf, Zhijing Jin†",
-    venue: "Preprint · ICML 2026 RLxF Workshop (Oral, Top 4 Best Papers out of 222 submissions)",
+    venue: "NeurIPS 2026 · ICML 2026 RLxF Workshop (Oral, 4 of 222 submissions)",
     links: { paper: "https://arxiv.org/abs/2606.25178", code: "https://github.com/YangYongJin/transfer-aware-curriculum" },
+  },
+  {
+    year: 2026, key: true,
+    title: "Toward Skill-Native LLMs: Skill Entropy for Benchmarking and Training Long-Horizon Reasoning",
+    authors: "Yinghui He, Ling Yang, Jiarui Liu, Yongjin Yang, et al.",
+    venue: "NeurIPS 2026",
+    links: { paper: "https://arxiv.org/abs/2608.05139", code: "https://github.com/Gen-Verse/Skill-Entropy-RL" },
+  },
+  {
+    year: 2026, key: true, firstAuthor: true,
+    title: "Learning from Evolving Prompts: Adaptive Prompt Teaching for Reinforcement Learning",
+    authors: "Yongjin Yang, Lechen Zhang, Jiarui Liu, Yinghui He, Christopher Pal, Alexandre Drouin, Zhijing Jin",
+    venue: "Under review",
+    links: {},
   },
   {
     year: 2025, key: true, firstAuthor: true,
@@ -25,7 +39,7 @@ export const publications = [
   },
   {
     year: 2026, key: true, firstAuthor: true, selected: true,
-    title: "Making Complex Reasoning Student-Friendly: A Hybrid Distillation Framework for Small Language Models",
+    title: "Making Complex Reasoning Student-Friendly: A Hybrid LLM-to-SLM Distillation Framework",
     authors: "Yongjin Yang, Yinghui He, Jiarui Liu, Zhijing Jin",
     venue: "Scaling Post-training for LLMs Workshop @ ICLR 2026",
     links: { paper: "https://openreview.net/pdf?id=6jP5PDOmqN" },
@@ -34,7 +48,7 @@ export const publications = [
     year: 2026, key: true,
     title: "LLM-as-a-Tutor: Policy-Aware Prompt Adaptation for Non-Verifiable RL",
     authors: "Yujin Kim*, Namgyu Ho*, Sangmin Hwang*, Joonkee Kim, Yongjin Yang, Sangmin Bae, Seungone Kim, Jaehun Jung, Se-Young Yun†, Hwanjun Song†",
-    venue: "Preprint",
+    venue: "NeurIPS 2026",
     links: { paper: "https://arxiv.org/abs/2607.04412" },
   },
   {
@@ -52,13 +66,6 @@ export const publications = [
     links: { paper: "https://arxiv.org/abs/2603.07079", code: "https://github.com/WLS04/EOPD" },
   },
   {
-    year: 2026, key: true,
-    title: "MixSD: Mixed Contextual Self-Distillation for Knowledge Injection",
-    authors: "Jiarui Liu, Lechen Zhang, Yongjin Yang, Yinghui He, Yingheng Wang, Weihao Xuan, Zhijing Jin, Mona T. Diab",
-    venue: "Preprint",
-    links: { paper: "https://arxiv.org/abs/2605.16865", code: "https://github.com/jiarui-liu/MixSD" },
-  },
-  {
     year: 2025, key: true, firstAuthor: true,
     title: "Revisiting Multi-Agent Debate as Test-Time Scaling: A Systematic Study of Conditional Effectiveness",
     authors: "Yongjin Yang*, Euiin Yi*, Jongwoo Ko, Kimin Lee†, Zhijing Jin†, Se-Young Yun†",
@@ -73,20 +80,6 @@ export const publications = [
     authors: "Punya Syon Pandey, Yongjin Yang, Jiarui Liu, Zhijing Jin",
     venue: "EACL 2026 Main",
     links: { paper: "https://aclanthology.org/2026.eacl-long.57/" },
-  },
-  {
-    year: 2026,
-    title: "The Wedge Questions: Latent Cultural Boundaries in LLMs via Persona Projection Divergence",
-    authors: "Yejin Son, Yongjin Yang, Ryan Faulkner, Matt Ratto, Seungwon Lim, Youngjae Yu, Zhijing Jin",
-    venue: "Preprint · ICML 2026 Pluralistic Alignment Workshop",
-    links: { paper: "https://openreview.net/pdf?id=zHQuHMzOuD" },
-  },
-  {
-    year: 2026,
-    title: "UniSAFE: A Comprehensive Benchmark for Safety Evaluation of Unified Multimodal Models",
-    authors: "Segyu Lee*, Boryeong Cho*, Hojung Jung*, Seokhyun An, Juhyeong Kim, Jaehyun Kwak, Yongjin Yang, Sangwon Jang, Youngrok Park, Wonjun Chang, Se-Young Yun",
-    venue: "Preprint",
-    links: { paper: "https://arxiv.org/abs/2603.17476", code: "https://github.com/segyulee/UniSAFE" },
   },
   {
     year: 2025,
